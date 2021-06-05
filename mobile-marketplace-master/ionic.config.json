@@ -1,0 +1,7 @@
+{
+  "name": "mobile-markeplace",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

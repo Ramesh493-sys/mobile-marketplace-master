@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    
+  </ion-toolbar>
+  <ion-title style= " margin-left : -30px;text-align: center; font-weight: bolder;">Add Listing</ion-title>
+</ion-header>
+
+<ion-content>
+  <div class="main_content_div">
+    <div class="tymbookerThumb" [style.backgroundImage]="'url(' + downloadUrl + ')'">
+    </div>
+    <ion-button expand="block" (click)="openActionsheet()" fill="clear" size="small">
+    
+     Upload Image
+    </ion-button>
+    <div *ngIf="percentage | async as pct">
+      Progress: {{ pct | number }}%
+      <ion-progress-bar value="{{ pct / 100 }}"></ion-progress-bar>
+    </div>
+  
+      <div class="div_form">
+        <form [formGroup]="listing_form">    
+          <ion-input type="text"  formControlName="title" placeholder="Title"></ion-input>
+          <ion-textarea rows="3" formControlName="description"  placeholder="Description"></ion-textarea>
+          <ion-input type="number"  formControlName="price" placeholder="Price"></ion-input>
+          <ion-button (click)="onClickSave()"  expand="block">
+            Save
+          </ion-button>
+      </form>
+      </div>
+  </div>
+</ion-content>

@@ -1,0 +1,44 @@
+<ion-content class="ion-padding">
+  <ion-slides mode="md" [options]="slideOpts">
+    <ion-slide>
+      <ion-button (click)="back()" fill="clear" class="backBtn">
+        <ion-icon slot="start" name="arrow-back-outline" color="dark"></ion-icon>
+      </ion-button>
+      <div class="emailForm">
+        <h2 class="ion-text-center header_lbl" >Sign Up</h2>
+        <form [formGroup]="registration_form">    
+          <ion-item lines="full">
+            <ion-label position="floating">Email</ion-label>
+            <ion-input type="text" formControlName="email" required></ion-input>
+          </ion-item> 
+      
+          <ion-item lines="full">
+            <ion-label position="floating">Password</ion-label>
+            <ion-input type="password" formControlName="password" required></ion-input>
+          </ion-item>
+          <ion-item lines="full">
+            <ion-label position="floating">Confirm Password</ion-label>
+            <ion-input type="password" formControlName="confPassword"  required></ion-input>
+          </ion-item>
+      
+          <ion-row>
+            <ion-col> 
+            <ion-button class="btn_class" [disabled]="!registration_form.valid" color="secondary"  type="submit" (click)="signUp(registration_form.value)" expand="block">Register</ion-button>
+            </ion-col>
+          </ion-row>
+        </form>
+       
+      </div>
+    </ion-slide>
+    <ion-slide>
+      
+      <div class="emailForm">
+        <h2 class="ion-text-center header_lbl">Email Verification</h2>
+        <p class="subtitle ion-text-center">We sent email verification to
+          {{user.email}}. Please verify to continue...
+        </p>
+      </div>
+    </ion-slide>
+  </ion-slides> 
+
+</ion-content>

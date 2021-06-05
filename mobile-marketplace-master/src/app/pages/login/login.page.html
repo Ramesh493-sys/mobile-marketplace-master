@@ -1,0 +1,39 @@
+
+
+<ion-content class="ion-padding">
+  <div class="login-logo">
+    <img src="assets/icon/favicon.png" class="logo_icon"> 
+    <p class="login-name"> Mobile Marketplace</p>
+    <p class="subTitle"> Enter your login detail to access your account</p>
+  </div>
+  <form #loginForm="ngForm" novalidate>
+    <ion-list lines="none">
+      <ion-item lines="none">
+        <ion-input [(ngModel)]="login.email" placeholder="Email" name="email" #email="ngModel" spellcheck="false"
+          autocapitalize="off" required>
+        </ion-input>
+      </ion-item>
+   
+      <ion-item lines="none">
+        <ion-input [(ngModel)]="login.password" name="password" placeholder="Password" type="password"
+          #password="ngModel" required>
+        </ion-input>
+      </ion-item>
+
+       </ion-list>
+
+    <ion-row class="ion-no-margin ion-no-padding">
+      <ion-col class="ion-no-margin ion-no-padding">
+        <ion-button class="btn_class" color="secondary" (click)="onLogin(loginForm)" type="submit" expand="block">Log in
+        </ion-button>
+        <label class="error-message1">{{errorMessage}}</label>
+
+      </ion-col>
+    </ion-row>
+
+  </form>
+  <p class="createAcc" (click)="register()">Don't have an account?
+    <span class="registerTag">Sign up</span>
+  </p>
+
+</ion-content>

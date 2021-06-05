@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+   
+    <ion-title style= "text-align: center; font-weight: bolder;">My Listings</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="main_content_div">
+    <div class="card_div2" *ngFor="let item of items">
+      <div class="tymbooker_image" 
+      [style.backgroundImage]="'url(' +item.photoUrl+ ')'"></div>   
+   
+  
+  
+  
+      <div style="padding-left: 10px;">
+        <ion-label class="tymbooker_name">Title : {{item.title}}</ion-label><br>
+        <ion-label class="date">Description : {{item.description}}</ion-label><br>
+        <ion-label class="date">Price (Rs) : {{item.price}}</ion-label>
+      
+      </div>
+    </div>
+  </div>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="addNewListing()">
+    <ion-fab-button color="secondary">
+      <ion-icon name="add" mode="md"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
